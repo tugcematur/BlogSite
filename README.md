@@ -1,6 +1,6 @@
 # Simple Blog App
 
-A basic yet functional blog web application that includes authentication and user-based content management.
+A basic functional blog web application that includes authentication and user-based content management.
 
 ## Features
 - User Registration, Login, and Logout
@@ -11,8 +11,8 @@ A basic yet functional blog web application that includes authentication and use
 - Authorization checks to prevent unauthorized actions
 
 ## Technologies Used
-- [Your Tech Stack: e.g., ASP.NET Core / Django / Flask / etc.]
-- [Database: SQL Server / SQLite / etc.]
+- [Your Tech Stack: e.g., ASP.NET Core ]
+- [Database: SQL Server ]
 - [Frontend: HTML/CSS/Bootstrap/etc.]
 
 ## To-Do
