@@ -1,0 +1,70 @@
+﻿@model BlogApp.Models.ViewModels.PostCreateModel
+
+<center><p class="home-paragraph">Add Post </p></center>
+
+<div class="row">
+    <div class="container d-flex justify-content-center align-items-center">
+        @*   style="height: 100vh;" *@
+        <div class="col-md-4 ">
+
+            @if(ViewBag.Message != null){
+                <div class="alert alert-danger">@ViewBag.Message</div>
+            }
+            <form method="post">
+                <input type="hidden" asp-for="Post.PostId" />
+                <div class="form-group">
+                    <label asp-for="Post.Title"></label>
+                    <input asp-for="Post.Title" class="form-control textbox " />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Post.Content"></label>
+                    <textarea asp-for="Post.Content" class="form-control textbox" style="height:300px;"></textarea>
+                </div>
+                <div class="form-group mt-3">
+                    <label >Category</label>
+                    <select asp-for="Post.CategoryId" class="form-select label">
+
+                        @if (Model.CategoryList != null)
+                        {
+                            @foreach (var item in Model.CategoryList)
+                            {
+                                /*  if (item.CategoryId == Model.Post.CategoryId)
+                                {
+                                <option style="color:red" name=Post.CategoryId selected value ="@item.CategoryId">
+                                @item.CategoryName
+                                </option>
+                                }
+
+                                else
+                                {
+                                <option name="Post.CategoryId" value="@item.CategoryId">
+                                @item.CategoryName
+                                </option>
+                                }*/
+
+                                <option value="@item.CategoryId">
+                                    @item.CategoryName
+                                </option>
+                            }
+                        }
+
+                        else
+                        {
+                            <option disabled>Hiç kategori yok </option>
+                        }
+
+                    </select>
+
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary float-end mt-2" value="OK" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

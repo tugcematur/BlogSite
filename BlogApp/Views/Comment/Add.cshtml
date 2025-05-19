@@ -1,0 +1,29 @@
+﻿@model BlogApp.Models.ViewModels.CommentModel
+
+<center><p class="home-paragraph">Add Comment</p></center>
+
+<div class="row">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="col-md-4">
+
+            @if (ViewBag.Message != null)
+            {
+                <div class=" alert alert-danger">@ViewBag.Message</div>
+            }
+            <form method="post">
+                <div class="form-group">
+                    <label>Add Comment</label>
+                    <textarea asp-for="CommentText" class="form-control textbox" style="height:300px;"></textarea>
+                    <input asp-for=PostId type="hidden" />
+                    @*  <input asp-for=UserId type="hidden"/> *@
+                </div>
+
+
+                <input type="submit" class="btn btn-primary float-end mt-2 " value="OK" />
+
+
+
+            </form>
+        </div>
+    </div>
+</div>

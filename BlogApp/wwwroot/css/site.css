@@ -1,0 +1,118 @@
+html {
+	font-size: 14px;
+}
+
+@media (min-width: 768px) {
+	html {
+		font-size: 16px;
+	}
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+	box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+input {
+	
+	padding: 10px;
+	margin: 5px 0;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+body {
+	margin-bottom: 60px;
+	background-color: #659754;
+}
+
+h1 {
+	color: #d8a733
+}
+
+nav.navbar {
+	background-color: #d8a733 !important;
+}
+
+label {
+	color: #e49713;
+	font-family: 'Times New Roman';
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.home-paragraph {
+	color: #f5e008;
+	font-family: 'Times New Roman';
+	font-weight: 700;
+	font-size: 40px;
+}
+
+input[type="submit"] {
+	background-color: #f5e008;
+	color: #3a6608;
+}
+
+	input[type="submit"]:hover {
+		background-color: #e4f16f !important;
+		color:#659754;
+	}
+
+p {
+	color: #3a6608;
+	font-family: 'Times New Roman';
+	font-size: 21px;
+}
+
+.card-body {
+	background-color: #c0e992;
+}
+
+.card-footer {
+	background-color: #b1d70a;
+}
+
+.my-comment-btn {
+	background-color: #5ac32a;
+	color: white;
+	border: none;
+	font-weight: bold;
+}
+
+.my-comment-btn:hover {
+    background-color: #99ef72;
+}
+
+.textbox {
+	background-color: #c0e992 !important;
+}
+
+.label {
+	background-color: #c0e992;
+}
+
+.content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; /* Bu satýr, içeriði dikey olarak ortalar */
+}
+
+footer {
+	background-color: #d8a733;
+}
+
+.content {
+	font-family: 'Times New Roman';
+	font-weight: 700;
+	font-size: 70px;
+}
+
+.btn-size {
+	font-size: 1rem; 
+	padding: 9px 40px;
+}

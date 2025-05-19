@@ -1,0 +1,80 @@
+﻿@model IEnumerable<BlogApp.Models.DTO.PostDTO>
+
+
+<center><p class="home-paragraph">Posts </p></center>
+
+
+<div class="container mt-4">
+    <div class="row">
+        @foreach (var post in Model)
+        {
+            <div class="col-12 mb-4">
+                <div class="card  shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">@post.Title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Kategori: @post.CategoryName</h6>
+                        <p class="card-text">@post.Content</p>
+
+                        @if(post.UserId == (int?)ViewBag.UserId)
+                        {
+                            <div class="d-flex justify-content-end gap-2">
+                                <a asp-action="Update" asp-route-id="@post.PostId" class="btn btn-warning btn-sm">Edit</a>
+                            <form action="DeletePost" method="post" onsubmit="return confirm('Bu gönderiyi silmek istediğinize emin misiniz?')" style="display:inline;">
+                                <input type=hidden  name=id value="@post.PostId"/>
+                                <button type="submit" class="btn btn-danger btn-sm " >Delete</button>
+                            </form>
+                            </div>
+                        }
+                    </div>
+                    <div class="card-footer text-muted d-flex justify-content-between align-items-center">
+                        Author: @post.Username
+                        @* <p>@post.PostId</p> *@
+                       
+                        <a asp-route-postId="@post.PostId" class="btn my-comment-btn " asp-controller="Comment" asp-action="Add">Add Comment</a>
+                    </div>
+
+                    @if (post.Comments != null && post.Comments.Any())
+                    {
+                        <div class="card-body">
+                            <h6>Comments</h6>
+                            <ul>
+                                @foreach (var comment in post.Comments)
+
+                                {
+
+                                    <li class=" list-group-item  mb-2">
+                                        <strong>@comment.Username:</strong>@comment.CommentText
+
+                                        @if (comment.UserId == (int?)ViewBag.UserId)
+                                        {
+                                            
+                                            <a asp-action="Update" asp-controller="Comment" asp-route-id="@comment.CommentId" class="btn btn-warning btn-sm">Edit</a>
+                                            <form asp-action="DeleteComment" asp-controller="Comment" method="post" style="display:inline;">
+                                                <input type="hidden" name="id" value="@comment.CommentId" />
+                                                <button type="submit" class="btn btn-danger btn-sm" onClick=" return confirm(' Bu yorumu silmek istediğinize emin misiniz ?')">Delete</button>
+                                            </form>
+                                           
+
+                                        }
+
+                                    </li>
+
+                                }
+                            </ul>
+                        </div>
+
+                    }
+
+                    else
+                    {
+                        <div class="card-body">
+                            <h6>Comments</h6>
+                            <p><em>Henüz yorum yapılmamış</em></p>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
