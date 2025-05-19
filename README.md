@@ -11,7 +11,7 @@ A basic functional blog web application that includes authentication and user-ba
 - Authorization checks to prevent unauthorized actions
 
 ## Technologies Used
-- [Your Tech Stack: e.g., ASP.NET Core ]
+- [ Tech Stack: e.g., ASP.NET Core ]
 - [Database: SQL Server ]
 - [Frontend: HTML/CSS/Bootstrap/etc.]
 
