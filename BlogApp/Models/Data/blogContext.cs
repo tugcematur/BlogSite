@@ -8,13 +8,7 @@ namespace BlogApp.Models.Data
         public blogContext(DbContextOptions<blogContext> options) : base(options) { }
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-C1B5RJG\\SQLEXPRESS;Database=CompanyDb;Trusted_Connection=True;TrustServerCertificate=True;");
-            }
-        }
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
